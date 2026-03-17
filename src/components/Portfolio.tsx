@@ -34,7 +34,7 @@ export function Portfolio() {
             Proyectos
           </h2>
           <p className="text-gray-400 text-lg">
-            Algunos de mis trabajos recientes
+            Algunos de mis trabajos recientes.
           </p>
         </motion.div>
 
