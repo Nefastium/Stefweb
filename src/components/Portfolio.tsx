@@ -12,7 +12,7 @@ const projects = [
   },
   {
     title: 'GM Electric',
-    category: 'Web Profesional',
+    category: 'Landing Page',
     image: 'https://bbwyaqxtumwceuecxqzy.supabase.co/storage/v1/object/sign/StefWeb/gm.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85ZjgwYWMwZS03Mzg2LTQ1MTYtOTBjYS00M2FjNjRjZjhlM2YiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJTdGVmV2ViL2dtLnBuZyIsImlhdCI6MTc3Mzc4Mzk0NiwiZXhwIjoyMDg5MTQzOTQ2fQ.cdHV3ePofRZEfDCVZv1ar0aMEFiuyiX9qN98eAncDzY',
     url: 'https://gmelectric.com.ar',
     description: 'Sitio para servicios eléctricos con SEO local',
@@ -40,7 +40,6 @@ export function Portfolio() {
 
         <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <a href={project.url} target="_blank">
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
@@ -59,7 +58,7 @@ export function Portfolio() {
 
               {/* Overlay */}
               <motion.div
-                className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6"
+                className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6"
                 initial={{ opacity: 0 }}
                 whileHover={{ opacity: 1 }}
               >
@@ -73,15 +72,12 @@ export function Portfolio() {
                   {project.description}
                 </p>
                 <div className="flex items-center text-white">
-                  <span className="text-sm mr-2">Ver proyecto</span>
+                  <a href={project.url} target="_blank"><span className="text-sm mr-2">Ver proyecto</span></a>
                   <ExternalLink className="w-4 h-4" />
                 </div>
               </motion.div>
 
-              {/* Glowing border effect */}
-              <div className="absolute inset-0 border-2 border-transparent group-hover:border-purple-500/50 rounded-2xl transition-all duration-300" />
             </motion.div>
-            </a>
           ))}
         </div>
       </div>
