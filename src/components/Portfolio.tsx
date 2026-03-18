@@ -46,13 +46,13 @@ export function Portfolio() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="group relative overflow-hidden rounded-2xl cursor-pointer"
+              className="group relative overflow-hidden rounded-2xl cursor-none"
             >
               <div className="aspect-[16/9] overflow-hidden">
                 <ImageWithFallback
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 group-hover:brightness-75"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 group-hover:brightness-75"
                 />
               </div>
 
@@ -68,12 +68,12 @@ export function Portfolio() {
                 <h3 className="text-2xl font-bold text-white mb-2">
                   {project.title}
                 </h3>
-                <div className="group/project flex items-center text-white">
-                  <a href={project.url} target="_blank" rel="noopener noreferrer">
+                <div className="flex items-center text-white">
+                  <a href={project.url} className="group/project" target="_blank" rel="noopener noreferrer">
                   <motion.button
-                    className=" text-white rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2 group-hover/project:text-purple-400"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
+                    className=" text-white rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2 group-hover/project:text-purple-400 cursor-none"
+                    whileHover={{ scale: 1.25 }}
+                    whileTap={{ scale: 1.15 }}
                   >
                     <ExternalLink className="group-has-[a] w-4 h-4 group-hover/project:rotate-12 transition-transform duration-300" />
                     <span className="text-sm">Ver proyecto</span>
