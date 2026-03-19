@@ -20,6 +20,9 @@ const projects = [
 ];
 
 export function Portfolio() {
+  function ChevronArrow() {
+    alert('¡Gracias por tu interés! Este proyecto es una muestra de mi trabajo reciente. Si quieres ver más, no dudes en contactarme. ¡Estoy aquí para ayudarte a llevar tu presencia digital al siguiente nivel!');
+  }
   return (
     <section className="py-24 px-6 bg-gray-900">
       <div className="max-w-6xl mx-auto">
@@ -66,16 +69,10 @@ export function Portfolio() {
                   whileTap={{ rotate: 540 }}
                   transition={{ duration: 0.6, ease: 'easeInOut' }}
                 >
-                  <ChevronRight className="w-10 h-10 text-purple-400" />
+                  <ChevronRight
+                  onClick={ChevronArrow}
+                  className="w-12 h-12 text-purple-400 hover:text-purple-600 transition-all duration-300 hover:scale-125" />
                 </motion.div>
-                <div>
-                <span className="text-blue-400 text-sm font-semibold mb-0">
-                  {project.category}
-                </span>
-                <h3 className="text-2xl font-bold text-white mb-2">
-                  {project.title}
-                </h3>
-                </div>
                 <div className="flex items-center text-white">
                   <a href={project.url} className="group/project" target="_blank" rel="noopener noreferrer">
                   <motion.button
@@ -88,6 +85,15 @@ export function Portfolio() {
                   </motion.button>
                   </a>
                 </div>
+                <div>
+                <span className="text-blue-400 text-sm font-semibold mb-0">
+                  {project.category}
+                </span>
+                <h3 className="text-2xl font-bold text-white mb-2">
+                  {project.title}
+                </h3>
+                </div>
+                
               </motion.div>
 
             </motion.div>
